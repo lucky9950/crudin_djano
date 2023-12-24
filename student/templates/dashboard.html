@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+
+         
+
+        <h1>View all student</h1>
+    <hr>
+    <a class="btn btn-success" href="\create" role="button">Add Student </a>
+
+    
+    
+
+    <hr>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Age</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delate</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for x  in data %}
+
+          <tr>
+            <th scope="row">1</th>
+            <td>{{x.name}}</td>
+            <td>{{x.email}} </td>
+            <td>{{x.mobile}} </td>
+            <td>{{x.age}}</td>
+            <td><a class="btn btn-primary" href="/update/{{x.id}}" role="button">Update </a> </td>
+             <td> <a class="btn btn-danger" href="/delete/{{x.id}}" role="button">Delate </a>
+            </td>
+          </tr>
+          {% endfor %}
+    
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
